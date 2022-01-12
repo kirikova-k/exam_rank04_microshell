@@ -132,7 +132,7 @@ void	ft_restorefd(void)
 {
 	int	tmp;
 	tmp = dup(STDIN_FILENO);
-	if (dup2(dup_stdin, STDIN_FILENO) == 1)
+	if (dup2(dup_stdin, STDIN_FILENO) == -1)
 		ft_fatalerr();
 	if (close(tmp) == -1)
 		ft_fatalerr();
