@@ -8,9 +8,7 @@
 #define READ 0
 #define WRITE 1
 
-int	dup_stdin;
-int	ret;
-int	haspipe;
+int	dup_stdin, ret, haspipe;
 
 int	ft_strlen(char *str)
 {
