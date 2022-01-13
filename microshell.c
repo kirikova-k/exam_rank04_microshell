@@ -23,10 +23,10 @@ void	ft_putstr_fd(char *str, int fd)
 	write(fd, str, ft_strlen(str));
 }
 
-void ft_fatalerr(void)
+void fatalerr(void)
 {
 	ft_putstr_fd("error: fatal\n", 2);
-	exit (1);
+	exit(1);
 }
 
 void ft_exec_error(char *str)
@@ -39,27 +39,27 @@ void ft_exec_error(char *str)
 
 void	ft_openpipes(int fd[2])
 {
-	if (haspipe == 1)
+	if (haspipe)
 	{
 		if (close(fd[READ]) == -1)
-			ft_fatalerr();
+			fatalerr();
 		if (dup2(fd[WRITE], STDOUT_FILENO) == -1)
-			ft_fatalerr();
+			fatalerr();
 		if (close(fd[WRITE]) == -1)
-			ft_fatalerr();
+			fatalerr();
 	}
 }
 
 void	ft_closepipes(int fd[2])
 {
-	if (haspipe == 1)
+	if (haspipe)
 	{
 		if (dup2(fd[READ], STDIN_FILENO) == -1)
-			ft_fatalerr();
+			fatalerr();
 		if (close(fd[READ]) == -1)
-			ft_fatalerr();
+			fatalerr();
 		if (close(fd[WRITE]) == -1)
-			ft_fatalerr();
+			fatalerr();
 	}
 }
 
@@ -91,9 +91,9 @@ void	ft_exec(char **av, char **envp)
 
 	if (!strcmp(av[0], "cd"))
 		return (ft_cd(av));
-	if (haspipe == 1)
+	if (haspipe)
 		if (pipe(fd) == -1)
-			ft_fatalerr();
+			fatalerr();
 	pid = fork();
 	if (pid == 0)
 	{
@@ -133,9 +133,9 @@ void	ft_restorefd(void)
 	int	tmp;
 	tmp = dup(STDIN_FILENO);
 	if (dup2(dup_stdin, STDIN_FILENO) == -1)
-		ft_fatalerr();
+		fatalerr();
 	if (close(tmp) == -1)
-		ft_fatalerr();
+		fatalerr();
 }
 
 int	main(int ac, char **av, char **envp)
