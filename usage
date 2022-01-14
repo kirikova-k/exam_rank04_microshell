@@ -1,0 +1,166 @@
+put in directory with your microshell.c and execute ./microshell_checker.sh
+
+------------
+30 tests
+____________
+ishould be something like this:
+
+TEST 1 :
+ /bin/ls
+file.txt                microshell.c            subject.en.txt
+microshell              microshell_checker.sh
+
+TEST 2 :
+ /bin/cat file.txt | /bin/cat -e
+~~~text in the file~~~$
+
+TEST 3 :
+ /bin/cat file.txt
+~~~text in the file~~~
+
+TEST4 :
+ /bin/ls microshell.c
+microshell.c
+
+TEST5 :
+ /bin/ls salut
+ls: salut: No such file or directory
+
+TEST6 :
+ ;
+
+TEST7 :
+ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;
+
+TEST8 :
+ ; ; /bin/echo OK:
+OK
+
+TEST9 :
+ ; ; /bin/echo OK ;:
+
+TEST10 :
+ ; ; /bin/echo OK ; /bin/echo OK:
+OK
+
+TEST11 :
+ ; ; /bin/echo OK ; ; /bin/echo OK
+OK
+
+TEST12 :
+ ; ; /bin/echo OK ; ; ; /bin/echo OK
+OK
+OK
+
+TEST13 :
+ /bin/ls | /usr/bin/grep microshell
+microshell
+microshell.c
+microshell_checker.sh
+
+TEST14 :
+ /bin/ls | /usr/bin/grep microshell | /usr/bin/grep micro
+microshell
+microshell.c
+microshell_checker.sh
+
+TEST15 :
+ /bin/ls | /usr/bin/grep microshell | /usr/bin/grep micro | /usr/bin/grep shell | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell | /usr/bin/grep shell
+microshell
+microshell.c
+microshell_checker.sh
+
+TEST16 :
+ /bin/ls | /usr/bin/grep microshell | /usr/bin/grep micro | /usr/bin/grep shell | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro | /usr/bin/grep micro
+microshell
+microshell.c
+microshell_checker.sh
+
+TEST17 :
+ /bin/ls ewqew | /usr/bin/grep micro | /bin/cat -n ; /bin/echo dernier ; /bin/echo
+ls: ewqew: No such file or directory
+dernier
+
+
+TEST18 :
+ /bin/ls | /usr/bin/grep micro | /bin/cat -n ; /bin/echo dernier ; /bin/echo ftest ;
+     1  microshell
+     2  microshell.c
+     3  microshell_checker.sh
+dernier
+ftest
+
+TEST19 :
+ /bin/echo ftest ; /bin/echo ftewerwerwerst ; /bin/echo werwerwer ; /bin/echo qweqweqweqew ; /bin/echo qwewqeqrtregrfyukui ;
+ftest
+ftewerwerwerst
+werwerwer
+qweqweqweqew
+qwewqeqrtregrfyukui
+
+TEST20 :
+ /bin/ls ftest ; /bin/ls ; /bin/ls werwer ; /bin/ls microshell.c ; /bin/ls subject.fr.txt ;
+ls: ftest: No such file or directory
+file.txt                microshell.c            subject.en.txt
+microshell              microshell_checker.sh
+ls: werwer: No such file or directory
+microshell.c
+ls: subject.fr.txt: No such file or directory
+
+TEST21 :
+ /bin/ls ewqew | /usr/bin/grep micro | /bin/cat -n ; /bin/echo dernier ; /bin/echo
+ls: ewqew: No such file or directory
+dernier
+
+
+TEST22 :
+ /bin/ls | /usr/bin/grep micro ; /bin/ls | /usr/bin/grep micro ; /bin/ls | /usr/bin/grep micro ; /bin/ls | /usr/bin/grep micro ;
+microshell
+microshell.c
+microshell_checker.sh
+microshell
+microshell.c
+microshell_checker.sh
+microshell
+microshell.c
+microshell_checker.sh
+microshell
+microshell.c
+microshell_checker.sh
+
+TEST23 :
+ /bin/cat file.txt | /usr/bin/grep a | /usr/bin/grep b ; /bin/cat file.txt ;
+~~~text in the file~~~
+
+TEST24 :
+ /bin/cat file.txt | /usr/bin/grep a | /usr/bin/grep w ; /bin/cat file.txt ;
+~~~text in the file~~~
+
+TEST25 :
+ /bin/cat file.txt | /usr/bin/grep a | /usr/bin/grep w ; /bin/cat file.txt
+~~~text in the file~~~
+
+TEST26 :
+ /bin/cat file.txt ; /bin/cat file.txt | /usr/bin/grep a | /usr/bin/grep b | /usr/bin/grep z ; /bin/cat file.txt
+~~~text in the file~~~
+~~~text in the file~~~
+
+TEST27 :
+ ; /bin/cat file.txt ; /bin/cat file.txt | /usr/bin/grep a | /usr/bin/grep b | /usr/bin/grep z ; /bin/cat file.txt
+~~~text in the file~~~
+~~~text in the file~~~
+
+TEST28 :
+ blah | /bin/echo OK
+error: cannot execute blah
+OK
+
+TEST29 :
+ blah | /bin/echo OK ;
+error: cannot execute blah
+OK
+
+TEST30 :
+ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; blah | /bin/echo OK ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;
+error: cannot execute blah
+OK
