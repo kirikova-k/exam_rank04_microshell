@@ -141,7 +141,6 @@ void	ft_restorefd(void)
 int	main(int ac, char **av, char **envp)
 {
 	int i = 0, begin = 1;
-
 	dup_stdin = dup(STDIN_FILENO);
 	(void)ac;
 	while(av[++i])
@@ -151,7 +150,7 @@ int	main(int ac, char **av, char **envp)
 			if(!strcmp(av[i], ";"))
 				av[i] = NULL;
 			ft_command(av + begin, envp);
-			begin = i +1;
+			begin = i + 1;
 		}
 		ret = 0;
 		ft_restorefd();
