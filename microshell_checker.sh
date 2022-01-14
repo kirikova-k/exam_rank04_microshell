@@ -17,7 +17,7 @@ echo "~~~text in the file~~~" >> file.txt
 echo "\033[1;36mTEST 1 :
  /bin/ls\033[0;37m"
 ./microshell /bin/ls
-echo "\033[1;36mTEST 2 :
+echo "\n\033[1;36mTEST 2 :
  /bin/cat file.txt "\|" /bin/cat -e\033[0;37m"
  ./microshell /bin/cat file.txt "|" /bin/cat -e
 echo "\n\033[1;36mTEST 3 :
